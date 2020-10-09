@@ -33,14 +33,12 @@ discord.login(process.env.TOKEN);
 
 discord.on('ready', async () => {
     logger.info(`Logged in as ${discord.user.tag}`)
-    logger.info(await discord.channels.fetch('735641786306920471'));
 
 })
 
 let postIanPhoto = null;
 
 discord.on('message', (msg) => {
-    logger.debug(msg, 'Received message');
     if (msg.author.id === '187657955422765062') {
         if (!postIanPhoto) {
             logger.info('Photo poster not initialized, initializing');
