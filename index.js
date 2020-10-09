@@ -40,7 +40,6 @@ discord.login(process.env.TOKEN);
 
 discord.on('ready', async () => {
     logger.info(`Logged in as ${discord.user.tag}`)
-
 })
 
 let randomlyPostIanPhoto = null;
