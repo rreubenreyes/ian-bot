@@ -13,12 +13,18 @@ DEBOUNCE_WAIT_TIME = 30000 // ms
 
 function getPhotoPoster(channel) {
     return async function postIanPhoto() {
+        logger.info('Rolling D2');
+
         if (Math.random() >= 0.5) {
+            logger.info('Rolled 2, Ian photo coming up');
+
             const photo = await fetch('https://t1kt4p30ca.execute-api.us-west-2.amazonaws.com/v1/picture')
                 .then(r => r.json());
 
             logger.info('HEHEHEHEHE');
             channel.send({ files: [photo.href] });
+        } else {
+            logger.info('Rolled 1, maybe next time');
         }
     }
 }
